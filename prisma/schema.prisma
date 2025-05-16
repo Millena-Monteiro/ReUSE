@@ -13,3 +13,18 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+enum TipoTransacao {
+  DOACAO
+  RECEBIMENTO
+  TRANSFERENCIA
+}
+
+model Historico {
+  id               Int        @id @default(autoincrement())
+  item_id          Int 
+  doador_id        Int  
+  receptor_id      Int 
+  data_transacao   DateTime
+  tipo             TipoTransacao
+}
