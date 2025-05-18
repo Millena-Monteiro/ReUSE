@@ -2,11 +2,13 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
+//Read
 const getHistoricos = async (req, res) => {
   const historicos = await prisma.historico.findMany();
   res.json(historicos);
 };
 
+//Create
 const createHistorico = async (req, res) => {
   const { item_id, doador_id, receptor_id, data_transacao, tipo } = req.body;
 
@@ -26,6 +28,7 @@ const createHistorico = async (req, res) => {
   }
 };
 
+//Update
 const updateHistorico = async (req, res) => {
   const { id } = req.params;
   const { item_id, doador_id, receptor_id, data_transacao, tipo } = req.body;
@@ -47,6 +50,7 @@ const updateHistorico = async (req, res) => {
   }
 };
 
+//Delete
 const deleteHistorico = async (req, res) => {
   const { id } = req.params;
 

@@ -6,25 +6,20 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
-enum TipoTransacao {
-  DOACAO
-  RECEBIMENTO
-  TRANSFERENCIA
-}
+
 
 model Historico {
-  id               Int        @id @default(autoincrement())
+  id               String       @id @default(uuid())
   item_id          Int 
   doador_id        Int  
   receptor_id      Int 
   data_transacao   DateTime
-  tipo             TipoTransacao
+  tipo             String
 }
