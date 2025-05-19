@@ -37,10 +37,15 @@ try {
 
 export const updateUser = async (req, res) => {
   try {
-    const updateUserdata = await userModel.updateUser(req.params.id, req.body);
-    res.json(updateUserdata);
+    const updatedUser = await userModel.updateUser(req.params.id, req.body);
+    
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'Usuario não encontrado' });
+    }
+
+    res.json(updatedUser);
   } catch (err) {
-    res.status(404).json({ message: 'Usuario não encontrado' });
+    res.status(500).json({ message: 'Erro ao atualizar usuário', erro: err.message });
   }
 };
 

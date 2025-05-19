@@ -17,6 +17,8 @@ model User {
   id         String       @id @default(uuid())
   nome       String
   email      String       @unique
+  senha_hash String 
+  tipo_usuario String
   avaliacoes Avaliacao[]
 }
 
