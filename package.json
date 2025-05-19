@@ -1,45 +1,22 @@
 {
   "name": "reuse",
   "version": "1.0.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "main": "server.js",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
     "start": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js"
-=======
-  "main": "src/server.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
->>>>>>> bia
-=======
-  "main": "src/server.js",
-  "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
->>>>>>> Mateus
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-<<<<<<< HEAD
-    "@prisma/client": "^6.7.0",
-<<<<<<< HEAD
-    "bcrypt": "^6.0.0",
-    "dotenv": "^16.5.0",
-=======
-    "cors": "^2.8.5",
->>>>>>> bia
-=======
     "@prisma/client": "^6.8.2",
->>>>>>> Mateus
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
     "uuid": "^11.1.0"
