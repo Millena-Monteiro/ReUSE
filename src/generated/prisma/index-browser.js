@@ -114,26 +114,33 @@ Prisma.NullTypes = {
  */
 
 exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
+  ReadUncommitted: 'ReadUncommitted',
+  ReadCommitted: 'ReadCommitted',
+  RepeatableRead: 'RepeatableRead',
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UserScalarFieldEnum = {
+exports.Prisma.HistoricoScalarFieldEnum = {
   id: 'id',
-  nome: 'nome',
-  email: 'email',
-  senha_hash: 'senha_hash',
-  data_criacao: 'data_criacao',
-  tipo_usuario: 'tipo_usuario'
+  item_id: 'item_id',
+  doador_id: 'doador_id',
+  receptor_id: 'receptor_id',
+  data_transacao: 'data_transacao',
+  tipo: 'tipo'
 };
 
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
 };
-
+exports.TipoTransacao = exports.$Enums.TipoTransacao = {
+  DOACAO: 'DOACAO',
+  RECEBIMENTO: 'RECEBIMENTO',
+  TRANSFERENCIA: 'TRANSFERENCIA'
+};
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  Historico: 'Historico'
 };
 
 /**

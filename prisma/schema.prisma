@@ -29,3 +29,13 @@ model Avaliacao {
   userId     String
   user       User     @relation(fields: [userId], references: [id])
 }
+
+
+model Historico {
+  id               String       @id @default(uuid())
+  item_id          Int 
+  doador_id        Int  
+  receptor_id      Int 
+  data_transacao   DateTime
+  tipo             String
+}

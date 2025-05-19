@@ -9,6 +9,10 @@ app.use(express.json());
 app.use('/users', userRoutes);
 app.use('/avaliacao', avaliacaoRoutes);
 
-app.listen(3000, () => {
-  console.log('API rodando em http://localhost:3000');
+
+app.use(express.json());
+app.use('/api', router);
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
