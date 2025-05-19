@@ -1,12 +1,20 @@
 {
   "name": "reuse",
   "version": "1.0.0",
+<<<<<<< HEAD
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "nodemon src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js"
+=======
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+>>>>>>> bia
   },
   "keywords": [],
   "author": "",
@@ -14,8 +22,12 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "^6.7.0",
+<<<<<<< HEAD
     "bcrypt": "^6.0.0",
     "dotenv": "^16.5.0",
+=======
+    "cors": "^2.8.5",
+>>>>>>> bia
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
     "uuid": "^11.1.0"
