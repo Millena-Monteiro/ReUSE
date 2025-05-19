@@ -35,7 +35,7 @@ const updateHistorico = async (req, res) => {
 
   try {
     const atualizado = await prisma.historico.update({
-      where: { id: parseInt(id, 10) },
+      where: { id },
       data: {
         item_id,
         doador_id,
@@ -55,7 +55,7 @@ const deleteHistorico = async (req, res) => {
   const { id } = req.params;
 
   try {
-    await prisma.historico.delete({ where: { id: parseInt(id, 10) } });
+    await prisma.historico.delete({ where: { id } });
     res.json({ msg: 'Histórico deletado com sucesso' });
   } catch (err) {
     res.status(404).json({ error: 'Histórico não encontrado' });
