@@ -1,12 +1,18 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import express from 'express';
 import userRoutes from './routes/userRoutes.js';
 import avaliacaoRoutes from './routes/avaliacaoRoutes.js';
+=======
+import express from 'express';
+import cupomRoutes from './routes/cupomRoutes.js';
+>>>>>>> Mateus
 
 const app = express();
 
 app.use(express.json());
 
+<<<<<<< HEAD
 app.use('/users', userRoutes);
 app.use('/avaliacao', avaliacaoRoutes);
 
@@ -41,3 +47,10 @@ app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
 >>>>>>> bia
+=======
+app.use('/cupons', cupomRoutes);
+
+app.listen(3000, () => {
+  console.log('API rodando em http://localhost:3000');
+});
+>>>>>>> Mateus

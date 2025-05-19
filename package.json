@@ -2,6 +2,7 @@
   "name": "reuse",
   "version": "1.0.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -15,12 +16,20 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
 >>>>>>> bia
+=======
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+>>>>>>> Mateus
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
     "@prisma/client": "^6.7.0",
 <<<<<<< HEAD
     "bcrypt": "^6.0.0",
@@ -28,11 +37,14 @@
 =======
     "cors": "^2.8.5",
 >>>>>>> bia
+=======
+    "@prisma/client": "^6.8.2",
+>>>>>>> Mateus
     "express": "^5.1.0",
     "nodemon": "^3.1.10",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "prisma": "^6.7.0"
+    "prisma": "^6.8.2"
   }
 }
