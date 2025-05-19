@@ -1,11 +1,15 @@
 import express from 'express';
-import cupomRoutes from './src/routes/cupomRoutes.js'; 
+import * as cupomControler from '../controller/cupomControler.js'; 
 
-const app = express();
-app.use(express.json());
 
-app.use('/cupons', cupomRoutes); 
+const router = express.Router();
 
-app.listen(3000, () => {
-  console.log('Servidor rodando na porta 3000');
-});
+// Rotas Cupom
+router.get('/', cupomControler.getAllCupons);
+router.get('/:id', cupomControler.getCupomById);
+router.post('/', cupomControler.createCupom);
+router.put('/:id', cupomControler.updateCupom);
+router.delete('/:id', cupomControler.deleteCupom);
+
+
+export default router;

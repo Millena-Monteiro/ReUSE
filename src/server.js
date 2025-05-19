@@ -1,11 +1,11 @@
 import express from 'express';
-import userRoutes from './routes/userRoutes.js';
+import cupomRoutes from './routes/cupomRoutes.js';
 
 const app = express();
 
 app.use(express.json());
 
-app.use('/users', userRoutes);
+app.use('/cupons', cupomRoutes);
 
 app.listen(3000, () => {
   console.log('API rodando em http://localhost:3000');

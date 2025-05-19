@@ -1,28 +1,27 @@
+
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const getAllUsers = () => prisma.user.findMany();
+export const getAllCupons = () => {
+  return prisma.cupom.findMany();
+};
 
-export const getUserById = (id) => prisma.user.findUnique({ where: { id } });
+export const getCupomById = (id) => {
+  return prisma.cupom.findUnique({ where: { id } });
+};
 
-export const createUser = (data) => {
-  const { nome, email, senha_hash, tipo_usuario } = data;
+export const createCupom = (data) => {
+  return prisma.cupom.create({ data });
+};
 
-  return prisma.user.create({
-    data: {
-      nome,
-      email,
-      senha_hash,
-      tipo_usuario,
-    },
+export const updateCupom = (id, data) => {
+  return prisma.cupom.update({
+    where: { id },
+    data,
   });
 };
 
-export const updateUser = (id, data) =>
-  prisma.user.update({ where: { id }, data });
-
-export const deleteUser = (id) =>
-  prisma.user.delete({ where: { id } });
-
-export default prisma;
+export const deleteCupom = (id) => {
+  return prisma.cupom.delete({ where: { id } });
+};
