@@ -13,11 +13,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  id           String   @id @default(uuid()) 
-  nome         String
-  email        String   @unique              
-  senha_hash   String
-  data_criacao DateTime @default(now())     
-  tipo_usuario String                         
+model User {
+  id         String       @id @default(uuid())
+  nome       String
+  email      String       @unique
+  avaliacoes Avaliacao[]
+}
+
+model Avaliacao {
+  id         String   @id @default(uuid())
+  nota       Int
+  comentario String?
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
 }
