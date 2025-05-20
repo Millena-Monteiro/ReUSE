@@ -24,15 +24,15 @@ export const getCupomById = async (req, res) => {
 
 export const createCupom = async (req, res) => {
   try {
-    const { codigo, userID, valor, validade } = req.body;
+    const { codigo, userId, valor, validade } = req.body;
 
-    if (!codigo || !userID || !valor || !validade) {
+    if (!codigo || !userId || !valor || !validade) {
       return res.status(400).json({ message: 'Todos os campos são obrigatórios.' });
     }
 
     const novoCupom = await cupomModel.createCupom({
       codigo,
-      userID,
+      userId,
       valor,
       validade,
       utilizado: false,
