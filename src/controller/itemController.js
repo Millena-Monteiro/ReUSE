@@ -24,22 +24,22 @@ export const getItemById = async (req, res) => {
 // Criar novo item
 export const createItem = async (req, res) => {
   try {
-    const { titulo, descricao, status, usuarioId } = req.body;
+    const { titulo, descricao, status, userId } = req.body;
 
-    if (!titulo || !descricao || !usuarioId) {
-      return res.status(400).json({ message: 'Título, descrição e usuário são obrigatórios.' });
+    if (!titulo || !descricao || !userId) {
+      return res.status(400).json({ message: 'Título, descrição e userId são obrigatórios.' });
     }
 
     const newItem = await itemModel.createItem({
       titulo,
       descricao,
       status: status || 'disponível',
-      usuarioId,
+      userId, // passa para o model
     });
 
     res.status(201).json(newItem);
   } catch (err) {
-    res.status(500).json({ message: 'Erro ao criar item', erro: err.message });
+    res.status(err.code || 500).json({ message: 'Erro ao criar item', erro: err.message });
   }
 };
 

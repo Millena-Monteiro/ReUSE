@@ -10,12 +10,16 @@ datasource db {
 }
 
 model User {
-  id         String       @id @default(uuid())
-  nome       String
-  email      String       @unique
-  senha_hash String 
-  tipo_usuario String
-  avaliacoes Avaliacao[]
+  id             String       @id @default(uuid())
+  nome           String
+  email          String       @unique
+  senha_hash     String
+  tipo_usuario   String
+  avaliacoes     Avaliacao[]
+  items          Item[]       
+  cupons         Cupom[]     
+  historicoDoado Historico[]  @relation("DoadorHistorico")
+  historicoRecebido Historico[] @relation("ReceptorHistorico")
 }
 
 model Avaliacao {
@@ -26,30 +30,36 @@ model Avaliacao {
   user       User     @relation(fields: [userId], references: [id])
 }
 
-
 model Historico {
-  id               String       @id @default(uuid())
-  item_id          Int 
-  doador_id        Int  
-  receptor_id      Int 
-  data_transacao   DateTime
-  tipo             String
+  id             String   @id @default(uuid())
+  item_id        String     
+  receptor_id    String
+  doador_id      String
+  data_transacao DateTime
+  tipo           String
+
+  receptor       User     @relation("ReceptorHistorico", fields: [receptor_id], references: [id])
+  doador         User     @relation("DoadorHistorico", fields: [doador_id], references: [id])
+  item           Item     @relation(fields: [item_id], references: [id])
 }
 
 model Item {
-  id         Int      @id @default(autoincrement())
+  id         String      @id @default(uuid())
   titulo     String
   descricao  String
   status     String   @default("disponível")
-  usuarioId  Int
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
+  historicos Historico[]
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
 }
 model Cupom {
   id String   @id @default(uuid())
   codigo String @unique
-  userID String
   valor Float
   validade String
   utilizado Boolean @default(false) 
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
 }

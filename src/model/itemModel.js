@@ -17,19 +17,25 @@ export const getAllItems = () =>
   });
 
   
-export const createItem = (data) => {
-  const { titulo, descricao, status = 'disponível', usuarioId } = data;
+export const createItem = async (data) => {
+  const { titulo, descricao, status = 'disponível', userId } = data;
+
+  const usuario = await prisma.user.findUnique({ where: { id: userId } });
+  if (!usuario) {
+    const erro = new Error('Usuário não encontrado');
+    erro.code = 404;
+    throw erro;
+  }
 
   return prisma.item.create({
     data: {
       titulo,
       descricao,
       status,
-      usuarioId,
+      userId, 
     },
   });
 };
-
 export const updateItem = (id, data) =>
   prisma.item.update({ where: { id }, data });
 
