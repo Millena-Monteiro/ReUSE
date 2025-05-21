@@ -61,5 +61,5 @@ model Cupom {
   validade String
   utilizado Boolean @default(false) 
   userId     String
-  user       User     @relation(fields: [userId], references: [id])
+  user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
