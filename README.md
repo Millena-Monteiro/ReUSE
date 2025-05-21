@@ -93,10 +93,10 @@ https://reuse-mnoi.onrender.com/
 | PUT    | /itens/:id                               | Atualiza um item                        |
 | DELETE | /itens/:id                               | Deleta um item                          |
 
-| GET    | /historicos                             | Lista todos os históricos               |
-| POST   | /historicos                             | Cria um novo histórico                  |
-| PUT    | /historicos/:id                          | Atualiza um histórico                   |
-| DELETE | /historicos/:id                           | Deleta um histórico                     |
+| GET    | api/historicos                             | Lista todos os históricos               |
+| POST   | api/historicos                             | Cria um novo histórico                  |
+| PUT    | api/historicos/:id                          | Atualiza um histórico                   |
+| DELETE | api/historicos/:id                           | Deleta um histórico                     |
 
 ## 🌎 Deploy da API
 A API está disponível em:
