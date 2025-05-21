@@ -1,103 +1,117 @@
+# ♻️ ReUse+
 
-# ♻️ ReUse+ API
+## 📜 Descrição
+O **ReUse+** é uma plataforma que promove a sustentabilidade e a economia circular, conectando pessoas que desejam doar, trocar ou adquirir itens usados em bom estado. O projeto visa reduzir o consumo excessivo e o descarte inadequado, incentivando a reutilização.
 
-## 🌎 Visão Geral do Projeto
+## 🚀 Tecnologias usadas
+- Node.js
+- Express
+- Sequelize (com SQLite ou PostgreSQL)
+- JavaScript
+- Middleware para validações
+- Nodemon (ambiente de desenvolvimento)
 
-O **ReUse+** é uma plataforma que promove **sustentabilidade, economia circular e consumo consciente**, conectando pessoas que desejam **doar, trocar ou reutilizar itens** que não usam mais. A proposta é simples, direta e com grande impacto: transformar o que seria lixo em oportunidade para outras pessoas.
+## 🔥 Funcionalidades
+- ✅ Cadastro e login de usuários
+- ✅ Publicação de itens (com título, descrição, categoria, status e usuário)
+- ✅ Busca de itens por ID e listagem de todos os itens
+- ✅ Sistema de cupons como forma de gamificação (com validade, valor e status)
+- ✅ Avaliação dos itens e usuários
+- ✅ Histórico de trocas/doações
+- ✅ Gerenciamento completo de usuários
+- ✅ API REST com operações CRUD para todos os recursos
 
-Esse projeto nasceu da vontade de incentivar práticas sustentáveis, estimular a solidariedade e combater o desperdício, oferecendo uma solução prática e acessível.
-
----
-
-## 🚀 Funcionalidades Principais
-
-- 👤 Gestão de usuários: cadastro, login e controle dos perfis.
-- 📦 Cadastro de itens: publicação de itens disponíveis para doação ou troca.
-- 🔍 Filtros inteligentes: busca por categoria, estado e palavra-chave.
-- ⭐ Sistema de favoritos: salva itens que você curtiu para visualizar depois.
-- 🎁 Sistema de cupons: recompensas e pontuação por ações sustentáveis.
-- 🕑 Histórico de transações: acompanhe todas as doações e trocas realizadas.
-- 🌟 Avaliações: feedback entre usuários para fortalecer a confiança na plataforma.
-
----
-
-## 📦 Estrutura de Rotas da API
-
-### 🧑‍💻 Rotas de Usuários
-| Método | Endpoint         | Descrição                  |
-|--------|------------------|----------------------------|
-| GET    | /api/usuarios    | Listar todos os usuários   |
-| GET    | /api/usuarios/:id| Buscar usuário por ID      |
-| POST   | /api/usuarios    | Criar novo usuário         |
-| PUT    | /api/usuarios/:id| Atualizar dados do usuário |
-| DELETE | /api/usuarios/:id| Deletar usuário            |
-
-### 📦 Rotas de Itens
-| Método | Endpoint        | Descrição                   |
-|--------|-----------------|-----------------------------|
-| GET    | /api/itens      | Listar todos os itens       |
-| GET    | /api/itens/:id  | Buscar item por ID          |
-| POST   | /api/itens      | Criar novo item             |
-| PUT    | /api/itens/:id  | Atualizar dados do item     |
-| DELETE | /api/itens/:id  | Deletar item                |
-
-### ⭐ Rotas de Avaliações
-| Método | Endpoint              | Descrição                      |
-|--------|-----------------------|--------------------------------|
-| GET    | /api/avaliacoes       | Listar todas as avaliações     |
-| GET    | /api/avaliacoes/:id   | Buscar avaliação por ID        |
-| POST   | /api/avaliacoes       | Criar nova avaliação           |
-| PUT    | /api/avaliacoes/:id   | Atualizar avaliação            |
-| DELETE | /api/avaliacoes/:id   | Deletar avaliação              |
-
-### 🎁 Rotas de Cupons
-| Método | Endpoint         | Descrição                  |
-|--------|------------------|----------------------------|
-| GET    | /api/cupons      | Listar todos os cupons     |
-| GET    | /api/cupons/:id  | Buscar cupom por ID        |
-| POST   | /api/cupons      | Criar novo cupom           |
-| PUT    | /api/cupons/:id  | Atualizar dados do cupom   |
-| DELETE | /api/cupons/:id  | Deletar cupom              |
-
-### 🕑 Rotas de Histórico
-| Método | Endpoint               | Descrição                     |
-|--------|------------------------|-------------------------------|
-| GET    | /api/historicos        | Listar todos os históricos    |
-| POST   | /api/historicos        | Criar novo histórico          |
-| PUT    | /api/historicos/:id    | Atualizar dados do histórico  |
-| DELETE | /api/historicos/:id    | Deletar histórico             |
-
----
-
-## 🔗 Organização das Rotas no Projeto
-
+## 📁 Estrutura de Pastas
 ```
-routes/
-├── avaliacaoRoutes.js     # Rotas de avaliações
-├── cupomRoutes.js         # Rotas de cupons
-├── itemRoutes.js          # Rotas de itens
-├── reuseRoutes.routes.js  # Rotas de histórico e gerais
-└── userRoutes.js          # Rotas de usuários
+src/
+├── controllers/        # Lógica das funcionalidades
+├── models/             # Modelagem dos dados e banco
+├── routes/             # Definição das rotas da API
+└── server.js           # Arquivo principal que sobe o servidor
 ```
 
----
+## 🔧 Como rodar o projeto localmente
+### Pré-requisitos:
+- Node.js instalado (versão 16 ou superior)
+- Git instalado
 
-## 💡 Por Que Usar o ReUse+?
+### Passo a passo:
+```bash
+# Clone o repositório
+git clone https://github.com/BiaVB/ReUSE-.git
 
-- ✅ Praticidade para doar, trocar e buscar itens.
-- ♻️ Foco total em sustentabilidade e consumo consciente.
-- ⭐ Sistema de reputação, histórico e avaliação para segurança dos usuários.
-- 🎯 Plataforma intuitiva, com recompensas e gamificação.
+# Acesse a pasta do projeto
+cd ReUSE-
 
----
+# Instale as dependências
+npm install
 
-## 🚀 Próximos Passos
+# Rode as migrações e configure o banco se necessário
+# (dependendo de como o sequelize está configurado)
 
-- 🔧 Implementar notificações em tempo real.
-- 📲 Criar uma versão mobile.
-- 🔥 Expandir o sistema de gamificação com desafios e rankings.
+# Inicie o servidor
+npm start
 
----
+# Ou, se estiver usando nodemon para desenvolvimento
+npx nodemon src/server.js
+```
 
-## 💚 Junte-se ao movimento!
-Vamos transformar o mundo através da reutilização. Bora construir uma sociedade mais sustentável, inteligente e consciente! 🌍✨
+O servidor irá rodar em:
+```
+http://localhost:3000
+```
+Ou acesse o deploy:
+```
+https://reuse-mnoi.onrender.com/
+```
+
+## 🔗 Endpoints da API
+
+| Método | Rota                                | Descrição                              |
+|--------|--------------------------------------|-----------------------------------------|
+| GET    | /usuarios                            | Lista todos os usuários                 |
+| GET    | /usuarios/:id                        | Busca um usuário por ID                 |
+| POST   | /usuarios                             | Cria um novo usuário                    |
+| PUT    | /usuarios/:id                         | Atualiza um usuário                     |
+| DELETE | /usuarios/:id                         | Deleta um usuário                       |
+
+| GET    | /avaliacoes                           | Lista todas as avaliações               |
+| GET    | /avaliacoes/:id                        | Busca avaliação por ID                  |
+| POST   | /avaliacoes                            | Cria uma nova avaliação                 |
+| PUT    | /avaliacoes/:id                        | Atualiza uma avaliação                  |
+| DELETE | /avaliacoes/:id                        | Deleta uma avaliação                    |
+
+| GET    | /cupons                                | Lista todos os cupons                   |
+| GET    | /cupons/:id                             | Busca cupom por ID                      |
+| POST   | /cupons                                 | Cria um novo cupom                      |
+| PUT    | /cupons/:id                              | Atualiza um cupom                       |
+| DELETE | /cupons/:id                              | Deleta um cupom                         |
+
+| GET    | /itens                                 | Lista todos os itens                    |
+| GET    | /itens/:id                              | Busca item por ID                       |
+| POST   | /itens                                  | Cria um novo item                       |
+| PUT    | /itens/:id                               | Atualiza um item                        |
+| DELETE | /itens/:id                               | Deleta um item                          |
+
+| GET    | /historicos                             | Lista todos os históricos               |
+| POST   | /historicos                             | Cria um novo histórico                  |
+| PUT    | /historicos/:id                          | Atualiza um histórico                   |
+| DELETE | /historicos/:id                           | Deleta um histórico                     |
+
+## 🌎 Deploy da API
+A API está disponível em:
+```
+https://reuse-mnoi.onrender.com/
+```
+
+## 👥 Contribuidores
+- Mateus – Cupons
+- Diego – Usuários e Avaliações
+- Riane – Histórico
+- Bia – Itens
+- Brenda – Pagamentos
+- Yasmim – Favoritos
+
+## 📲 Contatos
+- 🔗 [GitHub do projeto](https://github.com/BiaVB/ReUSE-)
+- 🔗 [Link do Deploy](https://reuse-mnoi.onrender.com/)
