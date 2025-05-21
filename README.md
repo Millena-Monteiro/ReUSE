@@ -50,7 +50,7 @@ npm install
 # (dependendo de como o sequelize está configurado)
 
 # Inicie o servidor
-npm start
+npm run dev 
 
 # Ou, se estiver usando nodemon para desenvolvimento
 npx nodemon src/server.js
