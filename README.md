@@ -67,6 +67,7 @@ https://reuse-mnoi.onrender.com/
 
 ## 🔗 Endpoints da API
 
+### 👤 Usuários
 | Método | Rota                                | Descrição                              |
 |--------|--------------------------------------|-----------------------------------------|
 | GET    | /usuarios                            | Lista todos os usuários                 |
