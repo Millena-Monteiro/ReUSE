@@ -75,28 +75,40 @@ https://reuse-mnoi.onrender.com/
 | PUT    | /usuarios/:id                         | Atualiza um usuário                     |
 | DELETE | /usuarios/:id                         | Deleta um usuário                       |
 
-| GET    | /avaliacoes                           | Lista todas as avaliações               |
-| GET    | /avaliacoes/:id                        | Busca avaliação por ID                  |
-| POST   | /avaliacoes                            | Cria uma nova avaliação                 |
-| PUT    | /avaliacoes/:id                        | Atualiza uma avaliação                  |
-| DELETE | /avaliacoes/:id                        | Deleta uma avaliação                    |
+### 📝 Avaliações
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | /avaliacoes | Lista todas as avaliações |
+| GET | /avaliacoes/:id | Busca avaliação por ID |
+| POST | /avaliacoes | Cria uma nova avaliação |
+| PUT | /avaliacoes/:id | Atualiza uma avaliação |
+| DELETE | /avaliacoes/:id | Deleta uma avaliação |
 
-| GET    | /cupons                                | Lista todos os cupons                   |
-| GET    | /cupons/:id                             | Busca cupom por ID                      |
-| POST   | /cupons                                 | Cria um novo cupom                      |
-| PUT    | /cupons/:id                              | Atualiza um cupom                       |
-| DELETE | /cupons/:id                              | Deleta um cupom                         |
+### 🎟️ Cupons
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | /cupons | Lista todos os cupons |
+| GET | /cupons/:id | Busca cupom por ID |
+| POST | /cupons | Cria um novo cupom |
+| PUT | /cupons/:id | Atualiza um cupom |
+| DELETE | /cupons/:id | Deleta um cupom |
 
-| GET    | /itens                                 | Lista todos os itens                    |
-| GET    | /itens/:id                              | Busca item por ID                       |
-| POST   | /itens                                  | Cria um novo item                       |
-| PUT    | /itens/:id                               | Atualiza um item                        |
-| DELETE | /itens/:id                               | Deleta um item                          |
+### 📦 Itens
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | /itens | Lista todos os itens |
+| GET | /itens/:id | Busca item por ID |
+| POST | /itens | Cria um novo item |
+| PUT | /itens/:id | Atualiza um item |
+| DELETE | /itens/:id | Deleta um item |
 
-| GET    | api/historicos                             | Lista todos os históricos               |
-| POST   | api/historicos                             | Cria um novo histórico                  |
-| PUT    | api/historicos/:id                          | Atualiza um histórico                   |
-| DELETE | api/historicos/:id                           | Deleta um histórico                     |
+### 📜 Históricos
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | api/historicos | Lista todos os históricos |
+| POST | api/historicos | Cria um novo histórico |
+| PUT | api/historicos/:id | Atualiza um histórico |
+| DELETE | api/historicos/:id | Deleta um histórico |
 
 ## 🌎 Deploy da API
 A API está disponível em:
