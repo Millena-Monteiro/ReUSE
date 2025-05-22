@@ -17,7 +17,8 @@ model User {
   tipo_usuario   String
   avaliacoes     Avaliacao[]
   items          Item[]       
-  cupons         Cupom[]     
+  cupons         Cupom[]  
+  pagamentos     Pagamento[]   
   historicoDoado Historico[]  @relation("DoadorHistorico")
   historicoRecebido Historico[] @relation("ReceptorHistorico")
 }
@@ -25,7 +26,7 @@ model User {
 model Avaliacao {
   id         String   @id @default(uuid())
   nota       Int
-  comentario String?
+  comentario String 
   userId     String
   user       User     @relation(fields: [userId], references: [id])
 }
@@ -62,4 +63,15 @@ model Cupom {
   utilizado Boolean @default(false) 
   userId     String
   user       User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Pagamento {
+  id String     @id @default(uuid())
+  valor         Float
+  metodo        String
+  status        String   @default("pendente") // status vem do front: "pendente", "concluido", etc.
+  dataPagamento DateTime @default(now())
+
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
