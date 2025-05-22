@@ -6,7 +6,7 @@ O **ReUse+** é uma plataforma que promove a sustentabilidade e a economia circu
 ## 🚀 Tecnologias usadas
 - Node.js
 - Express
-- Sequelize (com SQLite ou PostgreSQL)
+- Sequelize (com SQLite)
 - JavaScript
 - Middleware para validações
 - Nodemon (ambiente de desenvolvimento)
@@ -18,6 +18,7 @@ O **ReUse+** é uma plataforma que promove a sustentabilidade e a economia circu
 - ✅ Sistema de cupons como forma de gamificação (com validade, valor e status)
 - ✅ Avaliação dos itens e usuários
 - ✅ Histórico de trocas/doações
+- ✅ Pagamentos registrados
 - ✅ Gerenciamento completo de usuários
 - ✅ API REST com operações CRUD para todos os recursos
 
@@ -62,7 +63,7 @@ http://localhost:3000
 ```
 Ou acesse o deploy:
 ```
-https://reuse-mnoi.onrender.com/
+https://reuse-lwju.onrender.com
 ```
 
 ## 🔗 Endpoints da API
@@ -111,10 +112,20 @@ https://reuse-mnoi.onrender.com/
 | PUT | api/historicos/:id | Atualiza um histórico |
 | DELETE | api/historicos/:id | Deleta um histórico |
 
+###  💲 Pagamentos
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | /pagamentos | Lista todos os pagamentos |
+| POST | /pagamentos | Cria um novo pagamento |
+| PUT | /pagamentos/:id | Atualiza um pagamento |
+| DELETE | /pagamentos/:id | Deleta um item |
+
+
+
 ## 🌎 Deploy da API
 A API está disponível em:
 ```
-https://reuse-mnoi.onrender.com/
+https://reuse-lwju.onrender.com
 ```
 
 ## 👥 Contribuidores
@@ -123,8 +134,7 @@ https://reuse-mnoi.onrender.com/
 - Riane – Histórico
 - Bia – Itens
 - Brenda – Pagamentos
-- Yasmim – Favoritos
 
 ## 📲 Contatos
 - 🔗 [GitHub do projeto](https://github.com/BiaVB/ReUSE-)
-- 🔗 [Link do Deploy](https://reuse-mnoi.onrender.com/)
+- 🔗 [Link do Deploy](https://reuse-lwju.onrender.com)
