@@ -1,50 +1,52 @@
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+import {
+  criarPagamento,
+  listarPagamentos,
+  getPagamentoPorId,
+  atualizarPagamento,
+  deletarPagamento
+} from '../model/PagamentoModel.js';
 
-export const criarPagamento = async (req, res) => {
+export const postPagamento = async (req, res) => {
   try {
-    const novo = await prisma.pagamento.create({
-      data: req.body,
-    });
-    res.status(201).json(novo);
+    const pagamento = await criarPagamento(req.body);
+    res.status(201).json(pagamento);
   } catch (e) {
-    res.status(400).json({ erro: e.message });
+    res.status(e.code || 400).json({ erro: e.message });
   }
 };
 
-export const listarPagamentos = async (req, res) => {
+export const getPagamentos = async (req, res) => {
   try {
-    const todos = await prisma.pagamento.findMany();
-    res.json(todos);
+    const lista = await listarPagamentos();
+    res.json(lista);
   } catch (e) {
     res.status(500).json({ erro: e.message });
   }
 };
 
-export const atualizarPagamento = async (req, res) => {
-  const id = Number(req.params.id);
+export const getPagamento = async (req, res) => {
   try {
-    const pagamentoExistente = await prisma.pagamento.findUnique({ where: { id } });
-    if (!pagamentoExistente) return res.status(404).json({ erro: 'Pagamento não encontrado' });
+    const pagamento = await getPagamentoPorId(req.params.id);
+    if (!pagamento) return res.status(404).json({ erro: 'Pagamento não encontrado' });
+    res.json(pagamento);
+  } catch (e) {
+    res.status(500).json({ erro: e.message });
+  }
+};
 
-    const atualizado = await prisma.pagamento.update({
-      where: { id },
-      data: req.body,
-    });
-    res.json(atualizado);
+export const putPagamento = async (req, res) => {
+  try {
+    const pagamento = await atualizarPagamento(req.params.id, req.body);
+    res.json(pagamento);
   } catch (e) {
     res.status(400).json({ erro: e.message });
   }
 };
 
-export const deletarPagamento = async (req, res) => {
-  const id = Number(req.params.id);
+export const deletePagamento = async (req, res) => {
   try {
-    const pagamentoExistente = await prisma.pagamento.findUnique({ where: { id } });
-    if (!pagamentoExistente) return res.status(404).json({ erro: 'Pagamento não encontrado' });
-
-    await prisma.pagamento.delete({ where: { id } });
-    res.json({ mensagem: 'Pagamento deletado' });
+    await deletarPagamento(req.params.id);
+    res.json({ mensagem: 'Pagamento deletado com sucesso' });
   } catch (e) {
     res.status(500).json({ erro: e.message });
   }
