@@ -14,6 +14,7 @@ export const getUserById = (id) =>
       cupons: true,
       historicoDoado: true,
       historicoRecebido: true,
+      pagamentos: true,
     },
   });
 

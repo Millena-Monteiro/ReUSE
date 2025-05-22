@@ -1,4 +1,4 @@
-// Para uma futura atualização
+//  ---> Para uma futura atualização <---
 
 // import jwt from 'jsonwebtoken';
 
