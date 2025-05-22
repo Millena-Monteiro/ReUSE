@@ -1,24 +1,26 @@
-import jwt from 'jsonwebtoken';
+// Para uma futura atualização
 
-export const verifyToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
+// import jwt from 'jsonwebtoken';
 
-  if (!authHeader) {
-    return res.status(403).json({ message: 'Acesso negado: token não fornecido' });
-  }
+// export const verifyToken = (req, res, next) => {
+//   const authHeader = req.headers['authorization'];
 
-  const token = authHeader.split(' ')[1];
+//   if (!authHeader) {
+//     return res.status(403).json({ message: 'Acesso negado: token não fornecido' });
+//   }
 
-  if (!token) {
-    return res.status(403).json({ message: 'Token inválido' });
-  }
+//   const token = authHeader.split(' ')[1];
 
-  jwt.verify(token, 'secreta', (err, decoded) => {
-    if (err) {
-      return res.status(403).json({ message: 'Token inválido ou expirado' });
-    }
+//   if (!token) {
+//     return res.status(403).json({ message: 'Token inválido' });
+//   }
 
-    req.userId = decoded.userId;
-    next();
-  });
-};
+//   jwt.verify(token, 'secreta', (err, decoded) => {
+//     if (err) {
+//       return res.status(403).json({ message: 'Token inválido ou expirado' });
+//     }
+
+//     req.userId = decoded.userId;
+//     next();
+//   });
+// };
