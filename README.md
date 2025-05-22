@@ -72,7 +72,7 @@ https://reuse-lwju.onrender.com
 | Método | Rota                                | Descrição                              |
 |--------|--------------------------------------|-----------------------------------------|
 | GET    | /usuarios                            | Lista todos os usuários                 |
-| GET    | /usuarios/:id                        | Busca um usuário por ID                 |
+| GET    | /usuarios/:id                        | Busca um usuário por ID com todas informações do mesmo                |
 | POST   | /usuarios                             | Cria um novo usuário                    |
 | PUT    | /usuarios/:id                         | Atualiza um usuário                     |
 | DELETE | /usuarios/:id                         | Deleta um usuário                       |
